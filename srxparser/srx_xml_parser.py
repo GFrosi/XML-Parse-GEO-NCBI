@@ -90,9 +90,9 @@ def save_gsm_srx(list_srx, out_file_name):
     Returns a file separated by tab'''
     
     file_counter = 0
-    srx_gsm_address_file = open(out_file_name + "_chunck-" + str(file_counter) + ".tsv","w")
+    srx_gsm_address_file = open(out_file_name + "_chunk-" + str(file_counter) + ".tsv","w")
 
-    print("file opened" + out_file_name + "_chunck-" + str(file_counter) + ".tsv")
+    print("file opened" + out_file_name + "_chunk-" + str(file_counter) + ".tsv")
     for cnt, i in enumerate(list_srx):
 
         line = "\t".join(i)
@@ -104,9 +104,9 @@ def save_gsm_srx(list_srx, out_file_name):
             file_counter += 1
 
             srx_gsm_address_file.close()
-            print("file closed " + out_file_name + "_chunck-" + str(file_counter -1) + ".tsv")
-            srx_gsm_address_file = open(out_file_name + "_chunck-" + str(file_counter) + ".tsv","w")
-            print("file opened " + out_file_name + "_chunck-" + str(file_counter) + ".tsv")
+            print("file closed " + out_file_name + "_chunk-" + str(file_counter -1) + ".tsv")
+            srx_gsm_address_file = open(out_file_name + "_chunk-" + str(file_counter) + ".tsv","w")
+            print("file opened " + out_file_name + "_chunk-" + str(file_counter) + ".tsv")
 
     srx_gsm_address_file.close()
 
