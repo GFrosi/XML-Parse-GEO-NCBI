@@ -55,6 +55,10 @@ def flatten_dict(list_of_records):
 
 
 def sampleParser(base_dir, all_fields):
+    """Receives a base dir (path) containing 
+    all XML files, and a list of all fields
+    of interest. Returns a list containig
+    all the desired metadata"""
 
     pathlist = Path(base_dir).glob('**/*.tgz') #get all tgz files in all subdirectories
     big_list = []
@@ -63,8 +67,7 @@ def sampleParser(base_dir, all_fields):
 
     for path in pathlist:
 
-        gse_name = os.path.basename(path).replace('_family.xml.tgz', '') 
-        # print(gse_name)
+        gse_name = os.path.basename(path).replace('_family.xml.tgz', '')
 
         with tarfile.open(path) as archive:
             for member in archive:

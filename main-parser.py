@@ -24,13 +24,16 @@ def main():
     disease_fields = df_char['Disease'].dropna().tolist()
     sex_fields = df_char['Sex'].dropna().tolist()
     all_fields = target_fields + catalog_fields + cell_fields + disease_fields + sex_fields
-   
+    print(len(all_fields))
+    # print(all_fields)
+    # sys.exit()
 
     # generating biglist for samples, gse and gpl title
     print('Parsing XML files...')
     big_list = pxsample.sampleParser(args.path, all_fields)
     big_list_gse = pxgse.gseParser(args.path)
-    big_list_gpl = pxgpl.gplParser(args.path) 
+    big_list_gpl = pxgpl.gplParser(args.path)
+
 
     #filtering biglists to get the correct samples according to len_list
     #if the characteristics fields change, you will need to re-check the sample_result length
